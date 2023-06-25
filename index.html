@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/index.css" >
+    <title>Prueba Técnica Desis</title>
+</head>
+<body>
+    <header>
+        <h1>Desis</h1>
+        
+        <nav>
+            <ul>
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Sobre mi</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h1>FORMULARIO DE VOTACIÓN:</h1>
+            <div class="form-section">
+                <form id="form_vote">
+                    <div class="form-info">
+                        <label for="nombre">Nombre y Apellido</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Nombre Apellido" required>
+                    </div>
+                    <div class="form-info">
+                        <label for="alias">Alias</label>
+                        <input type="text" id="alias" name="alias" required>
+                    </div>
+                    <div class="form-info">
+                        <label for="rut">RUT</label>
+                        <input type="text" id="rut" name="rut" placeholder="11111111-1" required>
+                    </div>
+                    <div class="form-info">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="nombre@email.com" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" size="30" required>
+                    </div>
+                    <div class="form-info">
+                        <label for="region">Región</label>
+                        <select id="region" name="region">
+                            <option value="">&nbsp;</option>
+                            <option value="1ra">1ra</option>
+                            <option value="2da">2da</option>
+                            <option value="3ra">3ra</option>
+                            <option value="4ta">4ta</option>
+                        </select>
+                    </div>
+                    <div class="form-info">
+                        <label for="comuna">Comuna</label>
+                        <select id="comuna" name="comuna">
+                            <option value="">&nbsp;</option>
+                            <option value="1ra">1ra</option>
+                            <option value="2da">2da</option>
+                        </select>
+                    </div>
+                    <div class="form-info">
+                        <label for="candidato">Candidato</label>
+                        <select id="candidato" name="candidato">
+                            <option value="">&nbsp;</option>
+                            <option value="1ra">1ra</option>
+                            <option value="2da">2da</option>
+                        </select>
+                    </div>
+                    <div class="form-info">
+                        <label for="candidato">Cómo se enteró de Nosotros</label>
+                        <div class="checkbox-container">
+                            <input type="checkbox" name="web" value="Web">Web<br>      
+                            <input type="checkbox" name="tv" value="TV">TV<br>      
+                            <input type="checkbox" name="redes_ociales" value="Redes Sociales">Redes Sociales<br>   
+                            <input type="checkbox" name="amigo" value="Amigo">Amigo<br>    
+                        </div>
+                    </div>
+                    <button type="submit" form="form_vote" value="Submit">Votar</button>
+                </form>
+            </div>
+        </article>
+        <aside>
+            <div class="div-listado">
+
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <p>©Copyright 2050 de nadie. Todos los derechos revertidos.</p>
+    </footer>
+
+    <script type="module" src="javascript/app.js"></script>
+</body>
+</html>
