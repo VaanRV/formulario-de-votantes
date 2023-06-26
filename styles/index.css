@@ -12,6 +12,11 @@ header {
     background-color: white;
 }
 
+a {
+    text-decoration:none;
+    color: black;
+}
+
 article {
     margin: 5px 10px;
 }
@@ -22,6 +27,29 @@ main {
 
 form {
     padding: 10px 15px;
+}
+
+footer {
+    display: flex;
+    justify-content: flex-end;
+    position:fixed;
+    left:0px;
+    bottom:0px;
+    height:45px;
+    width:100%;
+    background: #000000d6;
+    color: white;
+}
+
+button {
+    font-size: 11px;
+    font-weight: bold;
+    color: white;
+    background: #638cb5;
+    border: 0px;
+    width: 90px;
+    height: 30px;
+    cursor: pointer;
 }
 
 .form-section {
@@ -42,12 +70,12 @@ form {
 }
 
 .form-info > input {
-    width: 30%;
+    width: 350px;
     height: 20px;
 }
 
 .form-info > select {
-    width: 31%;
+    width: 358px;
     height: 26px;
     background: white;
     border: 1px solid gray;
@@ -64,12 +92,15 @@ form {
     background: #d6d6d6 !important;
 }
 
-button {
-    font-size: 10px;
-    font-weight: bold;
-    color: white;
-    background: #638cb5;
-    border: 0px;
-    width: 80px;
-    height: 25px;
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin: 15px;
+}
+
+.about {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 200px;
 }

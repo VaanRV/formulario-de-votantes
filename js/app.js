@@ -3,13 +3,11 @@ import { ValidarAlias } from './validarAlias.js';
 import { RegionIdConvertir } from './regionId.js';
 
 const urlAgregarVotante = ' http://localhost/php/urlAgregarVotante.php';
-const urlObtenerVotante = ' http://localhost/php/urlObtenerVotante.php';
 const urlObtenerRegiones = ' http://localhost/php/urlObtenerRegiones.php';
 const urlObtenerComunas = ' http://localhost/php/urlObtenerComunas.php';
 const urlObtenerCandidatos = ' http://localhost/php/urlObtenerCandidatos.php';
 
 //Listado de votantes, regiones y comunas en la BD
-let listaVotantes = []
 let listaRegiones = []
 let listaComunas = []
 let listaCandidatos = []
@@ -74,18 +72,6 @@ function validarFormulario(e) {
         agregarVotante()
     }
 }
-
-//Obtener la información de los votantes ya ingresados en la BD
-async function obtenerVotantes() {
-    listaVotantes = await fetch(urlObtenerVotante)
-    .then(res => res.json())
-    .then(data => data)
-    .catch(error => console.log(error))
-
-    mostrarVotantes()
-}
-
-obtenerVotantes()
 
 //Obtener la información de las regiones y comunas
 async function obtenerRegiones() {
@@ -190,23 +176,6 @@ function mostrarCandidatos() {
     })
 }
 
-//Mostrar en la página web los usuarios obtenidos anteriormente
-function mostrarVotantes() {
-    const divVotantes = document.querySelector('.div-listado')
-
-    listaVotantes.forEach(votante => {
-        const {nombre, alias, rut, email, region, comuna, candidato} = votante
-
-        const parrafo = document.createElement('p')
-        parrafo.textContent = `${nombre} - ${alias} - ${rut} - ${email} - ${region}`
-        parrafo.dataset.id = rut
-        const hr = document.createElement('hr')
-
-        divVotantes.appendChild(parrafo)
-        divVotantes.appendChild(hr)
-    });
-}
-
 //Agregar Votante en la BD
 async function agregarVotante() {
 
@@ -224,7 +193,6 @@ async function agregarVotante() {
     if(respuesta.msg === 'OK') {
         alert('Se ha registrado exitosamente')
         limpiarHTML()
-        obtenerVotantes()
 
         formulario.reset()
         limpiarObjeto()
@@ -233,16 +201,11 @@ async function agregarVotante() {
 
 //Limpiar los datos de los votantes ingresados para mostrar los nuevos ingresados
 function limpiarHTML() {
-    const divVotantes = document.querySelector('.div-listado')
     const selectComuna = document.querySelector('#comuna')
 
     selectComuna.innerHTML = '';
     selectComuna.setAttribute("disabled", "")
     selectComuna.classList.add("disabled-select");
-
-    while(divVotantes.firstChild) {
-        divVotantes.removeChild(divVotantes.firstChild)
-    }
 }
 
 //Limpiar los datos del votante ingresado

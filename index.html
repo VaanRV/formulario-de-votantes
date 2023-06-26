@@ -3,20 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles/index.css" >
+    <link rel="stylesheet" href="styles/index.css">
     <link rel="shortcut icon" href="#">
     <title>Prueba Técnica Desis</title>
 </head>
 <body>
     <header>
-        <h1>Desis</h1>
-        
-        <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Sobre mi</a></li>
-            </ul>
-        </nav>
+        <div>
+            <a href="./index.html">
+                <img src="img/servel.png" alt="servel" height="100px" width="150px">
+            </a>
+
+        </div>
+        <div class="about">
+            <div>
+                <img src="img/linkedin.png" alt="servel" height="20px" width="20px">
+                <a href="https://www.linkedin.com/in/francisco-duran-20424a22b/" target="_blank">Sobre mi</a>
+            </div>
+            <div>
+                <img src="img/voto.png" alt="servel" height="20px" width="20px">
+                <a href="./votantes.html">Votantes</a>
+            </div>
+        </div>
     </header>
     <main>
         <article>
@@ -37,7 +45,7 @@
                     </div>
                     <div class="form-info">
                         <label for="email">Email</label>
-                        <input type="email" id="email" name="email" placeholder="nombre@email.com" pattern="[a-z0-9]+@[a-z]+\.[a-z]{2,3}" size="30" required>
+                        <input type="email" id="email" name="email" placeholder="nombre@email.com" pattern="^[^@]+@[^@]+\.[a-zA-Z]{2,}$" size="30" required>
                     </div>
                     <div class="form-info">
                         <label for="region">Región</label>
@@ -66,20 +74,17 @@
                             <input type="checkbox" class="checkbox" name="amigo" value="Amigo">Amigo<br>    
                         </div>
                     </div>
-                    <button type="submit" form="form_vote" value="Submit">Votar</button>
+                    <div class="button-container">
+                        <button type="submit" form="form_vote" value="Submit">Votar</button>
+                    </div>
                 </form>
             </div>
         </article>
-        <aside>
-            <div class="div-listado">
-
-            </div>
-        </aside>
     </main>
     <footer>
         <p>©Copyright 2050 de nadie. Todos los derechos revertidos.</p>
     </footer>
 
-    <script type="module" src="javascript/app.js"></script>
+    <script type="module" src="js/app.js"></script>
 </body>
 </html>
