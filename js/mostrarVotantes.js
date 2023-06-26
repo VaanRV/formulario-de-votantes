@@ -17,16 +17,24 @@ obtenerVotantes()
 //Mostrar en la página web los usuarios obtenidos anteriormente
 function mostrarVotantes() {
     const divVotantes = document.querySelector('.div-listado')
+    const tablaVotante = document.querySelector('.tabla-votantes')
+    var tblBody = document.createElement("tbody");
 
     listaVotantes.forEach(votante => {
         const {nombre, alias, rut, email, region, comuna, candidato} = votante
+        console.log(Object.values(votante))
+        var hilera = document.createElement("tr");
 
-        const parrafo = document.createElement('p')
-        parrafo.textContent = `${nombre} - ${alias} - ${rut} - ${email} - ${region}`
-        parrafo.dataset.id = rut
-        const hr = document.createElement('hr')
+        Object.values(votante).forEach(ele => {
+            console.log(ele)
+            var celda = document.createElement("td");
+            var textoCelda = document.createTextNode(ele);
+            celda.appendChild(textoCelda);
+            hilera.appendChild(celda);
+        })
+        tblBody.appendChild(hilera)
 
-        divVotantes.appendChild(parrafo)
-        divVotantes.appendChild(hr)
     });
+    tablaVotante.appendChild(tblBody)
+    divVotantes.appendChild(tabla)
 }

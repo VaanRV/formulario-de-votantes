@@ -52,6 +52,40 @@ button {
     cursor: pointer;
 }
 
+table {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 12px;
+    margin: 25px;
+    width: 95%;
+    text-align: left;
+    border-collapse: collapse; 
+}
+tr {
+    background: green;
+}
+th {
+    font-size: 13px;
+    font-weight: normal;
+    padding: 8px;
+    background: #b9c9fe;
+    border-top: 4px solid #aabcfe;
+    border-bottom: 1px solid #fff;
+    color: #039;
+}
+
+td {
+    padding: 8px;
+    background: #e8edff;
+    border-bottom: 1px solid #fff;
+    color: #669;
+    border-top: 1px solid transparent;
+}
+
+tr:hover td {
+    background: #d0dafd;
+    color: #339;
+}
+
 .form-section {
     border: 1px solid !important;
     margin: 2px;
