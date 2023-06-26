@@ -1,0 +1,18 @@
+VERSIÓN XAMPP: 8.2.4
+VERSIÓN PHP: 8.2.4
+VERSIÓN MariaDb: 5.4.28
+
+Para terminos practicos he utilizado XAMPP como mi servidor web local,
+por lo que las versiones de PHP y MariaDb son en base a XAMPP.
+
+Pasos si se utiliza XAMPP:
+1) Configurar el archivo "httpd.conf" y cambiar la raíz del documento
+con la dirección del proyecto clonado. Ejemplo: "DocumentRoot "C:/xampp/htdocs/desis/"
+<Directory "C:/xampp/htdocs/desis/">"
+2) Levantar los puertos de "Apache" y "MySql".
+3) Crear la base de datos "form_data", en caso de querer colocar otro nombre
+debe modificar el archivo en la carpeta "php/connectionData.php" -> el atributo $database
+por el nuevo nombre de la base de datos.
+4) Importar los archivos de la carpeta "sql" los cuales contienen tanto las tablas como los datos
+de las regiones, comunas y candidatos.
+5) Entrar a localhost y comenzar a realizar las pruebas que deseen.

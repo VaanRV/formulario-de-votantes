@@ -1,3 +1,4 @@
+//Diccionario para conseguir el id asociado a cada región.
 export const RegionIdConvertir = {
     "I" : "2",
     "II" : "3",

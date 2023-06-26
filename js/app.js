@@ -7,12 +7,12 @@ const urlObtenerRegiones = ' http://localhost/php/urlObtenerRegiones.php';
 const urlObtenerComunas = ' http://localhost/php/urlObtenerComunas.php';
 const urlObtenerCandidatos = ' http://localhost/php/urlObtenerCandidatos.php';
 
-//Listado de votantes, regiones y comunas en la BD
+//Listado de votantes, regiones y comunas en la BD.
 let listaRegiones = []
 let listaComunas = []
 let listaCandidatos = []
 
-//Objeto que contiene la información del nuevo votante
+//Objeto que contiene la información del nuevo votante.
 const votanteInfo = {
     nombre: '',
     alias: '',
@@ -20,9 +20,11 @@ const votanteInfo = {
     email: '', 
     region: '',
     comuna: '', 
-    candidato: ''
+    candidato: '',
+    formato: ""
 }
 
+//Obtener los datos del formulario
 const formulario = document.getElementById('form_vote');
 const nombre = document.querySelector('#nombre');
 const alias = document.querySelector('#alias');
@@ -35,7 +37,7 @@ const checkbox = document.querySelectorAll(".checkbox")
 
 formulario.addEventListener('submit', validarFormulario)
 
-//Validar los datos del formulario según los criterios especificados en el documento
+//Validar los datos del formulario según los criterios especificados en el documento.
 function validarFormulario(e) {
     e.preventDefault()
 
@@ -73,7 +75,7 @@ function validarFormulario(e) {
     }
 }
 
-//Obtener la información de las regiones y comunas
+//Obtener desde la base de datos la información de las candidatos, regiones y comunas.
 async function obtenerRegiones() {
     listaRegiones = await fetch(urlObtenerRegiones)
     .then(res => res.json())
@@ -104,7 +106,7 @@ obtenerRegiones()
 obtenerComunas()
 obtenerCandidatos()
 
-//Mostrar en la página web los usuarios obtenidos anteriormente
+//Crear y mostrar las regiones obtenidas anteriormente.
 function mostrarRegiones() {
     const selectRegion = document.querySelector('#region')
 
@@ -125,18 +127,19 @@ function mostrarRegiones() {
     });
 }
 
+//En base a la Región seleccionada filtrar las comunas asociadas a la misma.
 function FiltrarComunas(option) {
     const regionId = RegionIdConvertir[option]
 
-    const coumnasFiltradas = listaComunas.filter(elem => 
-        elem.region_id == regionId
+    const coumnasFiltradas = listaComunas.filter(com => 
+        com.region_id == regionId
     )
 
     mostrarComunas(coumnasFiltradas)
 }
 
+//Crear y mostrar las Comunas filtradas en la página web.
 function mostrarComunas(comunas) {
-    
     const selectComuna = document.querySelector('#comuna')
     const blankCom = document.createElement('option')
     
@@ -157,8 +160,8 @@ function mostrarComunas(comunas) {
     })
 }
 
+//Crear y mostrar los candidatos obtenidos en la página web.
 function mostrarCandidatos() {
-    
     const selectCandidato = document.querySelector('#candidato')
     const blankCom = document.createElement('option')
     
@@ -176,9 +179,8 @@ function mostrarCandidatos() {
     })
 }
 
-//Agregar Votante en la BD
+//Agregar Votante en la BD.
 async function agregarVotante() {
-
     const respuesta = await fetch(urlAgregarVotante, {
         method: 'POST',
         body: JSON.stringify(votanteInfo)
@@ -199,7 +201,7 @@ async function agregarVotante() {
     }
 }
 
-//Limpiar los datos de los votantes ingresados para mostrar los nuevos ingresados
+//Limpiar el HTML completo luego de ser ingresado el votante.
 function limpiarHTML() {
     const selectComuna = document.querySelector('#comuna')
 
@@ -208,7 +210,7 @@ function limpiarHTML() {
     selectComuna.classList.add("disabled-select");
 }
 
-//Limpiar los datos del votante ingresado
+//Limpiar los datos del votante ingresado.
 function limpiarObjeto() {
     votanteInfo.nombre = ''
     votanteInfo.alias = ''
@@ -217,4 +219,5 @@ function limpiarObjeto() {
     votanteInfo.region = ''
     votanteInfo.comuna = ''
     votanteInfo.candidato = ''
+    votanteInfo.formato = ''
 }

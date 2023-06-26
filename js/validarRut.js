@@ -1,4 +1,5 @@
 
+//Regex para validar RUT.
 const regex = new RegExp(!/^[0-9]+[-|‐]{1}[0-9kK]{1}$/);
 
 export function ValidarRut(rut) {

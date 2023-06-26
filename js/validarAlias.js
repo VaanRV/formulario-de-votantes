@@ -1,3 +1,4 @@
+//Regex para validar Alias.
 var regex = new RegExp(/^[a-z0-9_-]{5,16}$/);
 
 export function ValidarAlias(alias) {
