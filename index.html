@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/index.css" >
+    <link rel="shortcut icon" href="#">
     <title>Prueba Técnica Desis</title>
 </head>
 <body>
@@ -28,7 +29,7 @@
                     </div>
                     <div class="form-info">
                         <label for="alias">Alias</label>
-                        <input type="text" id="alias" name="alias" required>
+                        <input type="text" id="alias" name="alias" style="text-transform:lowercase;" required>
                     </div>
                     <div class="form-info">
                         <label for="rut">RUT</label>
@@ -40,37 +41,29 @@
                     </div>
                     <div class="form-info">
                         <label for="region">Región</label>
-                        <select id="region" name="region">
+                        <select id="region" name="region" required>
                             <option value="">&nbsp;</option>
-                            <option value="1ra">1ra</option>
-                            <option value="2da">2da</option>
-                            <option value="3ra">3ra</option>
-                            <option value="4ta">4ta</option>
                         </select>
                     </div>
                     <div class="form-info">
                         <label for="comuna">Comuna</label>
-                        <select id="comuna" name="comuna">
+                        <select id="comuna" class="disabled-select" name="comuna" disabled autocomplete="off" required>
                             <option value="">&nbsp;</option>
-                            <option value="1ra">1ra</option>
-                            <option value="2da">2da</option>
                         </select>
                     </div>
                     <div class="form-info">
                         <label for="candidato">Candidato</label>
-                        <select id="candidato" name="candidato">
-                            <option value="">&nbsp;</option>
-                            <option value="1ra">1ra</option>
-                            <option value="2da">2da</option>
+                        <select id="candidato" name="candidato" required>
+
                         </select>
                     </div>
                     <div class="form-info">
                         <label for="candidato">Cómo se enteró de Nosotros</label>
                         <div class="checkbox-container">
-                            <input type="checkbox" name="web" value="Web">Web<br>      
-                            <input type="checkbox" name="tv" value="TV">TV<br>      
-                            <input type="checkbox" name="redes_ociales" value="Redes Sociales">Redes Sociales<br>   
-                            <input type="checkbox" name="amigo" value="Amigo">Amigo<br>    
+                            <input type="checkbox" class="checkbox" name="web" value="Web">Web<br>      
+                            <input type="checkbox" class="checkbox" name="tv" value="TV">TV<br>      
+                            <input type="checkbox" class="checkbox" name="redes_ociales" value="Redes Sociales">Redes Sociales<br>   
+                            <input type="checkbox" class="checkbox" name="amigo" value="Amigo">Amigo<br>    
                         </div>
                     </div>
                     <button type="submit" form="form_vote" value="Submit">Votar</button>

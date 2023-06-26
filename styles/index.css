@@ -60,6 +60,10 @@ form {
     justify-content: space-between;
 }
 
+.disabled-select {
+    background: #d6d6d6 !important;
+}
+
 button {
     font-size: 10px;
     font-weight: bold;

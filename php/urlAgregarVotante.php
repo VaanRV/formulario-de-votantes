@@ -13,7 +13,7 @@
 
     $sql = "INSERT INTO userInfo(rut, nombre, alias, email, region, comuna, candidato, formato) 
         VALUES('$dataVotante->rut', '$dataVotante->nombre', '$dataVotante->alias', '$dataVotante->email', 
-            '$dataVotante->region', '$dataVotante->comuna', '$dataVotante->candidato', 'wena')
+            '$dataVotante->region', '$dataVotante->comuna', '$dataVotante->candidato', '$dataVotante->formato')
         ";
     
     $query = $connection->query($sql) or die("Error ss");
